@@ -7,6 +7,14 @@
 >  *  Scripts you write locally can run.
 >  *  Downloaded scripts must be signed by a trusted publisher.
 
+
+#### 2.
+> ctrl + c : to end the execuation in terminal
+
+> ctrl + l : to clean the terminal.
+
+> ls : to see that files and packages .
+
 #### 2. Running go files
 >Runs the script :
 >``go run main.go``
