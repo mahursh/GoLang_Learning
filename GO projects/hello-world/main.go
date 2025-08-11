@@ -5,17 +5,29 @@ import (
 	"fmt"
 	"myapp/doctor"
 	"os"
+	"strings"
 )
 
 func main() {
-	reader  := bufio.NewReader(os.Stdin)
+	reader := bufio.NewReader(os.Stdin)
 	whatToSay := doctor.Intro()
 	fmt.Println(whatToSay)
-	for{
+	for {
 		fmt.Print("-> ")
 		userInput, _ := reader.ReadString('\n')
-		response := doctor.Response(userInput)
-		fmt.Println(response)
+		//for windows
+		userInput =strings.Replace(userInput, "\r\n", "", -1)
+
+		// for mac, linux , etc.
+		// userInput = strings.Replace(userInput, "\n", "", -1)
+		
+		if userInput == "quit" {
+			break
+		} else {
+			response := doctor.Response(userInput)
+ 
+			fmt.Println(response)
+
 		}
 	}
-
+}
