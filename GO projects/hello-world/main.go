@@ -16,17 +16,16 @@ func main() {
 		fmt.Print("-> ")
 		userInput, _ := reader.ReadString('\n')
 		//for windows
-		userInput =strings.Replace(userInput, "\r\n", "", -1)
+		userInput = strings.Replace(userInput, "\r\n", "", -1)
 
 		// for mac, linux , etc.
-		// userInput = strings.Replace(userInput, "\n", "", -1)
-		
+		userInput = strings.Replace(userInput, "\n", "", -1)
+
 		if userInput == "quit" {
 			break
 		} else {
-			response := doctor.Response(userInput)
- 
-			fmt.Println(response)
+
+			fmt.Println(doctor.Response(userInput))
 
 		}
 	}
