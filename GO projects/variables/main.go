@@ -14,7 +14,7 @@ func main() {
 	var firstNumber = 2
 	var secondNumber = 5
 	var subtraction = 7
-	// var answer int //becuase we did not gaved it a value, it will be asiigned with default value , for example for strings , its just a empty string.
+	var answer int //becuase we did not gaved it a value, it will be asiigned with default value , for example for strings , its just a empty string.
 	reader := bufio.NewReader(os.Stdin)
 	// display a welcom/instructions
 	fmt.Println("Guess the number game")
@@ -38,5 +38,7 @@ func main() {
 	reader.ReadString('\n')
 
 	//give them the answer
+	answer = firstNumber * secondNumber - subtraction
+	fmt.Println("The answer is", answer)
 
 }
