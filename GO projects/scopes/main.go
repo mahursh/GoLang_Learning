@@ -14,7 +14,9 @@ func main() {
 	myFunc()
 
 	newString := packageOne.PublicVar 
-	fmt.Println(newString)
+	fmt.Println("from packageOne : ", newString)
+
+	secondeString := packageOne.
 
 }
 

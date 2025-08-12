@@ -1,5 +1,12 @@
 package packageOne
 
-var privateVar = " I am private" // lowercase p → NOT exported 
 
-var PublicVar = "I am public (or exported)"  // exported
+// lowercase (first letter of variables name)
+// private (NOT exported)
+// only available inside this package.
+var privateVar = " I am private" 
+
+// uppercase (first letter of variables name)
+// public (exported)
+//availabale outside this packaage.
+var PublicVar = "I am public (or exported)" 
