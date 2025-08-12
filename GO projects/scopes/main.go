@@ -2,17 +2,17 @@ package main
 
 import "fmt"
 
-var one = "One"
+var one = "One" // package level variable
 
 func main() {
-	
+	var one = "this is a block level variable"
 	fmt.Println(one)
 	myFunc()
 
 }
 
 func myFunc() {
-	// var one = "the number one"
+	
 	fmt.Println(one)
 
 }
