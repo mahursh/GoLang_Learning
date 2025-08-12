@@ -21,7 +21,7 @@
 
 
 #### 4. creating package in go
->`go mod init PackageName`
+>`go mod init ProjectName`
 >`go mod tidy`
 ---
 ### Version Control Commands:

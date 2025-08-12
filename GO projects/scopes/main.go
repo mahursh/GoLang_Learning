@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"scopes/packageOne"
+)
 
 var one = "One" // package level variable
 
@@ -9,6 +12,9 @@ func main() {
 	var one = "this is a block level variable" // variable shadowing
 	fmt.Println(one)
 	myFunc()
+
+	newString := packageOne.PublicVar 
+	fmt.Println(newString)
 
 }
 
