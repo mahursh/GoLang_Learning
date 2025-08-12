@@ -11,12 +11,17 @@ import (
 const prompt = " don't type your number in, just press ENTER when ready."
 
 func main() {
-	// seed the random number generator.
-	
 	var firstNumber = rand.IntN(8) + 2
 	var secondNumber = rand.IntN(8) + 2
 	var subtraction = rand.IntN(8) + 2
-	var answer int //becuase we did not gaved it a value, it will be asiigned with default value , for example for strings , its just a empty string.
+	//becuase we did not gaved it a value, it will be asiigned with default value , for example for strings , its just a empty string.
+	var answer = firstNumber*secondNumber - subtraction
+
+	view(firstNumber, secondNumber, subtraction, answer)
+
+}
+
+func view(firstNumber int, secondNumber int, subtraction int, answer int) {
 	reader := bufio.NewReader(os.Stdin)
 	// display a welcom/instructions
 	fmt.Println("Guess the number game")
@@ -40,7 +45,7 @@ func main() {
 	reader.ReadString('\n')
 
 	//give them the answer
-	answer = firstNumber * secondNumber - subtraction
+
 	fmt.Println("The answer is", answer)
 
 }
