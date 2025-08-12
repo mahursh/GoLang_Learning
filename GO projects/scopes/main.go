@@ -13,15 +13,15 @@ func main() {
 	fmt.Println(one)
 	myFunc()
 
-	newString := packageOne.PublicVar 
+	newString := packageOne.PublicVar
 	fmt.Println("from packageOne : ", newString)
 
-	secondeString := packageOne.
+	packageOne.Exported()
 
 }
 
 func myFunc() {
-	
+
 	fmt.Println(one)
 
 }
