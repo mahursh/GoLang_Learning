@@ -5,7 +5,7 @@ import "fmt"
 var one = "One" // package level variable
 
 func main() {
-	var one = "this is a block level variable"
+	var one = "this is a block level variable" // variable shadowing
 	fmt.Println(one)
 	myFunc()
 
