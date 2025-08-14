@@ -1,30 +1,38 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
-	"strings"
+	"log"
+
+	"github.com/eiannone/keyboard"
 )
 
 func main() {
-	reader := bufio.NewReader(os.Stdin)
-	for{
-		fmt.Print("->")
+	err := keyboard.Open()
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer keyboard.Close()
 
-		// sometimes functions return more than one value. this underscore means i don't care about the second value that is returned
-		userInput, _ := reader.ReadString('\n')
-		// userInput = strings.Replace(userInput, "\r", "", -1)
-		// userInput = strings.Replace(userInput, "\n", "", -1)
+	fmt.Println("Press any key on the keyboard. Press ESC to quit.")
 
-		
-		//It removes both \n and \r automatically (and other whitespace):
-		userInput = strings.TrimSpace(userInput)
-		if userInput == "quit"{
-			break
-		}else{
-			fmt.Println(userInput)
+	for {
+		char, key, err := keyboard.GetSingleKey()
+		if err != nil {
+			log.Fatal(err)
 		}
 
+		if key == keyboard.KeyEsc {
+			break
+		}
+
+		// Handle printable keys
+		if key == 0 {
+			fmt.Printf("You pressed: %q\n", char)
+		} else {
+			fmt.Printf("You pressed special key: %v\n", key)
+		}
 	}
+
+	fmt.Println("Program exiting...")
 }
