@@ -19,6 +19,10 @@ import "fmt"
 var PackageVar = "PackageVar"
 
 
-func PrintMe(inp string){
+func PrintMe(inp ...string){
 	fmt.Println(inp)
+}
+
+func PrintMe2(firstInp , secondeInp, thidInp string){
+	fmt.Println(firstInp, secondeInp, thidInp)
 }
