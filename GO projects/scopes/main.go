@@ -1,27 +1,17 @@
 package main
 
-import (
-	"fmt"
-	"scopes/packageOne"
-)
+import "scopes/packageOne"
 
-var one = "One" // package level variable
+var myVar = "myVar"
 
 func main() {
-	// block level variable
-	var one = "this is a block level variable" // variable shadowing
-	fmt.Println(one)
-	myFunc()
 
-	newString := packageOne.PublicVar
-	fmt.Println("from packageOne : ", newString)
+	var blockVar = "blockVar"
+	packageOne.PrintMe(blockVar)
+	packageOne.PrintMe(myVar)
+	packageOne.PrintMe(packageOne.PackageVar)
 
-	packageOne.Exported()
-
-}
-
-func myFunc() {
-
-	fmt.Println(one)
+	//in the main function, print out the values of myVar,
+	//blockVar, and PackageVar on one line using the PrintMe  function in packageOne
 
 }

@@ -1,15 +1,24 @@
 package packageOne
 
+import "fmt"
+
 // lowercase (first letter of variables name)
 // private (NOT exported)
 // only available inside this package.
-var privateVar = " I am private"
+// var privateVar = " I am private"
 
 // uppercase (first letter of variables name)
 // public (exported)
 //availabale outside this packaage.
-var PublicVar = "I am public (or exported)"
+// var PublicVar = "I am public (or exported)"
 
-func notExported() {}
+// func notExported() {}
 
-func Exported() {}
+// func Exported() {}
+
+var PackageVar = "PackageVar"
+
+
+func PrintMe(inp string){
+	fmt.Println(inp)
+}
