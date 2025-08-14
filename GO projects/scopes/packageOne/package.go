@@ -26,3 +26,7 @@ func PrintMe(inp ...string){
 func PrintMe2(firstInp , secondeInp, thidInp string){
 	fmt.Println(firstInp, secondeInp, thidInp)
 }
+
+func PrintMe3(s1 , s2 string){
+	fmt.Println(s1, s2, PackageVar)
+}
