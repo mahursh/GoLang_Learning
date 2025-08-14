@@ -17,6 +17,16 @@ func main() {
 	defer func() {
 		_ = keyboard.Close()
 	}()
+	
+	coffees := make(map[int]string)
+	coffees[1] = "Cappucino"
+	coffees[2] ="Latte"
+	coffees[3] ="Americano"
+	coffees[4] ="Mocha"
+	coffees[5] ="Macchiato"
+	coffees[6] = "Espresso"
+
+	
 	fmt.Println("MENU")
 	fmt.Println("---")
 	fmt.Println("1 - Cappucino")
@@ -37,7 +47,7 @@ func main() {
 		//Runes (characters) %q
 		//
 		i, _ := strconv.Atoi((string(char)))
-		t := fmt.Sprintf("You chose %d", i)
+		t := fmt.Sprintf("You chose %s", coffees[i])
 		
 		fmt.Println(t)
 		if char == 'q' || char == 'Q'{
