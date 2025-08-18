@@ -14,7 +14,9 @@ func main() {
 	reader = bufio.NewReader(os.Stdin)
 	userName := readString("What is your name?")
 	age := readInt("How old are you?")
-	fmt.Println("Your name is", userName, ", and you are", age, "years old.")
+	// fmt.Println("Your name is "+ userName + ", and you are", age, "years old.")
+	fmt.Printf("Your name is %s and you are %d years old.\n", userName, age)
+
 }
 
 func prompt() {
