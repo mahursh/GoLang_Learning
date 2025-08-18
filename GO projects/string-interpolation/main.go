@@ -3,10 +3,10 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"github.com/eiannone/keyboard"
 	"os"
 	"strconv"
 	"strings"
-	"github.com/eiannone/keyboard"
 )
 
 var reader *bufio.Reader
@@ -15,7 +15,7 @@ type User struct {
 	UserName       string
 	Age            int
 	FavoriteNumber float64
-	OwensADog bool
+	OwensADog      bool
 }
 
 func main() {
@@ -31,7 +31,7 @@ func main() {
 		user.UserName,
 		user.Age,
 		user.FavoriteNumber,
-		map[bool] string{true:"you do own a dog", false:" you don,t have a dog."}[user.OwensADog])
+		map[bool]string{true: "you do own a dog", false: " you don,t have a dog."}[user.OwensADog])
 
 }
 
@@ -83,9 +83,9 @@ func readFloat(s string) float64 {
 	}
 }
 
-
-
 func GetYesOrNo(q string) bool {
+	fmt.Println(q)
+	prompt()
 	err := keyboard.Open()
 	if err != nil {
 		fmt.Println("an error accured")
