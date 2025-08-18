@@ -6,6 +6,7 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"github.com/eiannone/keyboard"
 )
 
 var reader *bufio.Reader
@@ -24,11 +25,13 @@ func main() {
 	user.UserName = readString("What is your name?")
 	user.Age = readInt("How old are you?")
 	user.FavoriteNumber = readFloat("What is your favorit number?")
+	user.OwensADog = GetYesOrNo("Do you own a dog?")
 
-	fmt.Printf("Your name is %s ,and you are %d years old . your faviorit  numbrt is %.2f .\n",
+	fmt.Printf("Your name is %s ,and you are %d years old . your faviorit  numbrt is %.2f . %s\n",
 		user.UserName,
 		user.Age,
-		user.FavoriteNumber)
+		user.FavoriteNumber,
+		map[bool] string{true:"you do own a dog", false:" you don,t have a dog."}[user.OwensADog])
 
 }
 
@@ -77,5 +80,30 @@ func readFloat(s string) float64 {
 		} else {
 			return num
 		}
+	}
+}
+
+
+
+func GetYesOrNo(q string) bool {
+	err := keyboard.Open()
+	if err != nil {
+		fmt.Println("an error accured")
+	}
+
+	defer func() {
+		_ = keyboard.Close()
+	}()
+
+	for {
+		fmt.Println(q)
+		char, _, err := keyboard.GetSingleKey()
+		if err != nil {
+			fmt.Println("Please enter y for y or n for no.")
+		}
+		if char == 'n' || char == 'N' {
+			return false
+		}
+		return true
 	}
 }
