@@ -71,7 +71,7 @@ func main() {
 		Year:          1991,
 	}
 
-	fmt.Println("MY CAR 1 IS A %d %S %S.", myStructCar.Year, myStructCar.Make, myStructCar.Model)
-	fmt.Println("MY CAR 12IS A %d %S %S.", myStructCar2.Year, myStructCar2.Make, myStructCar2.Model)
+	fmt.Printf("MY CAR 1 IS A %d %S %S.", myStructCar.Year, myStructCar.Make, myStructCar.Model)
+	fmt.Printf("MY CAR 2 IS A %d %S %S.", myStructCar2.Year, myStructCar2.Make, myStructCar2.Model)
 
 }
