@@ -84,4 +84,7 @@ func main() {
 	fmt.Println("X is :", x)
 	fmt.Println("My first pointer is :", myFirstPointer)
 
+	*myFirstPointer =  15
+	fmt.Println("x is now", x)
+
 }
