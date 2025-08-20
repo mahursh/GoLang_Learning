@@ -34,7 +34,7 @@ func main() {
 	//actually doing is creating an entirely new String and storing that in your variable.
 
 
-	myBool = true
+	myBool = true //the only thing you can strore in a boolean variable is true and false. we cant't even put 0 in. 
 	log.Println(myBool)
 
 	
