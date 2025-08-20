@@ -67,7 +67,7 @@ func main() {
 		Luxurt:        true,
 		BacketSeats:   false,
 		Make:          "volvo",
-		Model:         "xc()",
+		Model:         "xc90",
 		Year:          1991,
 	}
 
