@@ -18,9 +18,14 @@ var myBool bool
 // aggerigate types (array, struct)
 var myStringsArrays [3]string //In Go, you can only put declarations at the top level (outside main), not statements.
 
-
-
-
+type MyStructCar struct {
+	NumberOfTiers int
+	Luxurt        bool
+	BacketSeats   bool
+	Make          string
+	Model         string
+	Year          int
+}
 
 // reference types (pointers, slices, map, functions, channels)
 
@@ -44,11 +49,29 @@ func main() {
 	myBool = true //the only thing you can strore in a boolean variable is true and false. we cant't even put 0 in.
 	log.Println(myBool)
 
-	
 	myStringsArrays[0] = "cat"
 	myStringsArrays[1] = "dog"
 	myStringsArrays[2] = "mouse"
 
 	fmt.Println("first element in array is : ", myStringsArrays[0])
+
+	var myStructCar MyStructCar
+	myStructCar.NumberOfTiers = 4
+	myStructCar.Luxurt = true
+	myStructCar.BacketSeats = false
+	myStructCar.Make = "volkswagon"
+	myStructCar.Model = "Something"
+
+	myStructCar2 := MyStructCar{
+		NumberOfTiers: 4,
+		Luxurt:        true,
+		BacketSeats:   false,
+		Make:          "volvo",
+		Model:         "xc()",
+		Year:          1991,
+	}
+
+	fmt.Println("MY CAR 1 IS A %d %S %S.", myStructCar.Year, myStructCar.Make, myStructCar.Model)
+	fmt.Println("MY CAR 12IS A %d %S %S.", myStructCar2.Year, myStructCar2.Make, myStructCar2.Model)
 
 }
