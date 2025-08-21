@@ -90,6 +90,16 @@ func main() {
 	changeValueOfPointer(&x) 
 	fmt.Println("After function acall x is now :", x)
 
+
+
+	var animals []string
+	animals = append(animals,"dog")
+	animals = append(animals,"cat")
+	animals = append(animals, "fish")
+
+
+	fmt.Println(animals)
+
 }
 
 func changeValueOfPointer(num *int){
