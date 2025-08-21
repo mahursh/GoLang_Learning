@@ -112,8 +112,20 @@ func main() {
 
 	sort.Strings(animals)
 	fmt.Println("Is it sorted?", sort.StringsAreSorted(animals))
+	fmt.Println(animals)
+
+	animals = deletFromSlice(animals, 1)
+	fmt.Println(animals)
+	fmt.Println("Is it sorted?", sort.StringsAreSorted(animals))
 }
 
 func changeValueOfPointer(num *int){
 	*num = 25
+}
+
+func deletFromSlice(a[] string, i int) []string{
+	a[i] = a[len(a)-1] 
+	a[len(a)-1] = ""
+	a = a[:len(a)-1]
+	return a
 }
