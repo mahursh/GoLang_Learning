@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"sort"
 )
 
 // 1.basic types (numbers, strings, booleans)
@@ -107,6 +108,10 @@ func main() {
 	fmt.Println("First elemeent is :" , animals[0])
 	fmt.Println("First two elements are :", animals[0:2])
 	fmt.Println("The slice is",len(animals),"elemets long")
+	fmt.Println("Is it sorted?", sort.StringsAreSorted(animals))
+
+	sort.Strings(animals)
+	fmt.Println("Is it sorted?", sort.StringsAreSorted(animals))
 }
 
 func changeValueOfPointer(num *int){
