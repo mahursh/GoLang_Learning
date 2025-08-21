@@ -104,7 +104,9 @@ func main() {
 	for i, s := range animals{
 		fmt.Println(i, s)
 	}
-	fmt.Println("first elemeent is :" , animals[0])
+	fmt.Println("First elemeent is :" , animals[0])
+	fmt.Println("First two elements are :", animals[0:2])
+	fmt.Println("The slice is",len(animals),"elemets long")
 }
 
 func changeValueOfPointer(num *int){
