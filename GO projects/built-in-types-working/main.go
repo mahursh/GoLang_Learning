@@ -101,10 +101,10 @@ func main() {
 	fmt.Println(animals)
 
 	//another way to iterate over slice elements:
-	for _, s := range animals{
-		fmt.Println(s)
+	for i, s := range animals{
+		fmt.Println(i, s)
 	}
-
+	fmt.Println("first elemeent is :" , animals[0])
 }
 
 func changeValueOfPointer(num *int){
